@@ -1,0 +1,3 @@
+[submodule "reporting/writehat"]
+	path = reporting/writehat
+	url = https://github.com/blacklanternsecurity/writehat
