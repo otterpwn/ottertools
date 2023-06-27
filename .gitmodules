@@ -4,3 +4,6 @@
 [submodule "cryptography/RsaCtfTool"]
 	path = cryptography/RsaCtfTool
 	url = https://github.com/RsaCtfTool/RsaCtfTool
+[submodule "enumeration/enum4linux"]
+	path = enumeration/enum4linux
+	url = https://github.com/CiscoCXSecurity/enum4linux
