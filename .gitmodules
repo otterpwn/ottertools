@@ -7,3 +7,18 @@
 [submodule "enumeration/enum4linux"]
 	path = enumeration/enum4linux
 	url = https://github.com/CiscoCXSecurity/enum4linux
+[submodule "network_protocols/evil-winrm"]
+	path = network_protocols/evil-winrm
+	url = https://github.com/Hackplayers/evil-winrm
+[submodule "network_protocols/ssh-audit"]
+	path = network_protocols/ssh-audit
+	url = https://github.com/jtesta/ssh-audit
+[submodule "network_protocols/smbmap"]
+	path = network_protocols/smbmap
+	url = https://github.com/ShawnDEvans/smbmap
+[submodule "network_protocols/Responder"]
+	path = network_protocols/Responder
+	url = https://github.com/SpiderLabs/Responder
+[submodule "network_protocols/impacket"]
+	path = network_protocols/impacket
+	url = https://github.com/fortra/impacket
