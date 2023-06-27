@@ -67,3 +67,6 @@
 [submodule "active_directory/windapsearch"]
 	path = active_directory/windapsearch
 	url = https://github.com/ropnop/windapsearch
+[submodule "credentials_attacks/Dehashed"]
+	path = credentials_attacks/Dehashed
+	url = https://github.com/sm00v/Dehashed.git
