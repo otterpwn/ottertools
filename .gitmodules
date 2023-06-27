@@ -22,3 +22,21 @@
 [submodule "network_protocols/impacket"]
 	path = network_protocols/impacket
 	url = https://github.com/fortra/impacket
+[submodule "credentials_attacks/cupp"]
+	path = credentials_attacks/cupp
+	url = https://github.com/Mebus/cupp
+[submodule "credentials_attacks/firefox_decrypt"]
+	path = credentials_attacks/firefox_decrypt
+	url = https://github.com/unode/firefox_decrypt
+[submodule "credentials_attacks/KeyTabExtract"]
+	path = credentials_attacks/KeyTabExtract
+	url = https://github.com/sosdave/KeyTabExtract
+[submodule "credentials_attacks/LaZagne"]
+	path = credentials_attacks/LaZagne
+	url = https://github.com/AlessandroZ/LaZagne
+[submodule "credentials_attacks/o365spray"]
+	path = credentials_attacks/o365spray
+	url = https://github.com/0xZDH/o365spray
+[submodule "credentials_attacks/username-anarchy"]
+	path = credentials_attacks/username-anarchy
+	url = https://github.com/urbanadventurer/username-anarchy
