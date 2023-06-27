@@ -40,3 +40,30 @@
 [submodule "credentials_attacks/username-anarchy"]
 	path = credentials_attacks/username-anarchy
 	url = https://github.com/urbanadventurer/username-anarchy
+[submodule "active_directory/ADFSpoof"]
+	path = active_directory/ADFSpoof
+	url = https://github.com/mandiant/ADFSpoof
+[submodule "active_directory/ADRecon"]
+	path = active_directory/ADRecon
+	url = https://github.com/adrecon/ADRecon
+[submodule "active_directory/gpp-decrypt"]
+	path = active_directory/gpp-decrypt
+	url = https://github.com/t0thkr1s/gpp-decrypt
+[submodule "active_directory/Invoke-TheHash"]
+	path = active_directory/Invoke-TheHash
+	url = https://github.com/Kevin-Robertson/Invoke-TheHash
+[submodule "active_directory/mimikatz"]
+	path = active_directory/mimikatz
+	url = https://github.com/ParrotSec/mimikatz
+[submodule "active_directory/noPac"]
+	path = active_directory/noPac
+	url = https://github.com/cube0x0/noPac
+[submodule "active_directory/PetitPotam"]
+	path = active_directory/PetitPotam
+	url = https://github.com/topotam/PetitPotam
+[submodule "active_directory/adidnsdump"]
+	path = active_directory/adidnsdump
+	url = https://github.com/dirkjanm/adidnsdump
+[submodule "active_directory/windapsearch"]
+	path = active_directory/windapsearch
+	url = https://github.com/ropnop/windapsearch
