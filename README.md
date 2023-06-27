@@ -1,5 +1,5 @@
 ## OtterTools ʕ •ᴥ•ʔ
-This is a repo were I store the main tools i use when doing CTFs and Pentesting projects.
+This is a repo in which I store the main tools i use when doing CTFs and Pentesting projects.
 
 ### Cloning the repo
 To properly clone the repository and all its submodules use
