@@ -1,3 +1,6 @@
 [submodule "reporting/writehat"]
 	path = reporting/writehat
 	url = https://github.com/blacklanternsecurity/writehat
+[submodule "cryptography/RsaCtfTool"]
+	path = cryptography/RsaCtfTool
+	url = https://github.com/RsaCtfTool/RsaCtfTool
