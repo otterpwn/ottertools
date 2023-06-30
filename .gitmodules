@@ -73,3 +73,6 @@
 [submodule "linkedin2username"]
 	path = linkedin2username
 	url = https://github.com/initstring/linkedin2username
+[submodule "cracking/john"]
+	path = cracking/john
+	url = https://github.com/openwall/john.git
