@@ -76,3 +76,6 @@
 [submodule "cracking/john"]
 	path = cracking/john
 	url = https://github.com/openwall/john.git
+[submodule "hardware/pico-ducky"]
+	path = hardware/pico-ducky
+	url = https://github.com/dbisu/pico-ducky.git
