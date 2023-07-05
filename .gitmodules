@@ -79,3 +79,6 @@
 [submodule "hardware/pico-ducky"]
 	path = hardware/pico-ducky
 	url = https://github.com/dbisu/pico-ducky.git
+[submodule "hardware/esp8266_deauther"]
+	path = hardware/esp8266_deauther
+	url = https://github.com/SpacehuhnTech/esp8266_deauther.git
