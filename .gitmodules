@@ -82,3 +82,6 @@
 [submodule "hardware/esp8266_deauther"]
 	path = hardware/esp8266_deauther
 	url = https://github.com/SpacehuhnTech/esp8266_deauther.git
+[submodule "persistance/TheFatRat"]
+	path = persistance/TheFatRat
+	url = https://github.com/screetsec/TheFatRat
