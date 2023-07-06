@@ -85,3 +85,6 @@
 [submodule "persistance/TheFatRat"]
 	path = persistance/TheFatRat
 	url = https://github.com/screetsec/TheFatRat
+[submodule "persistance/Anubis-8.0"]
+	path = persistance/Anubis-8.0
+	url = https://github.com/CoreLine76/Anubis-8.0.git
