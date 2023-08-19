@@ -88,6 +88,3 @@
 [submodule "persistance/Anubis-8.0"]
 	path = persistance/Anubis-8.0
 	url = https://github.com/CoreLine76/Anubis-8.0.git
-[submodule "shells/ShellPop"]
-	path = shells/ShellPop
-	url = https://github.com/0x00-0x00/ShellPop.git
