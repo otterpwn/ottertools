@@ -88,3 +88,6 @@
 [submodule "persistance/Anubis-8.0"]
 	path = persistance/Anubis-8.0
 	url = https://github.com/CoreLine76/Anubis-8.0.git
+[submodule "cryptography/jwt_tool"]
+	path = cryptography/jwt_tool
+	url = https://github.com/ticarpi/jwt_tool
