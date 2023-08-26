@@ -91,3 +91,6 @@
 [submodule "cryptography/jwt_tool"]
 	path = cryptography/jwt_tool
 	url = https://github.com/ticarpi/jwt_tool
+[submodule "persistance/Havoc-C2"]
+	path = persistance/Havoc-C2
+	url = https://github.com/kunpen/Havoc-C2.git
