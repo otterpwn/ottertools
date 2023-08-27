@@ -88,3 +88,6 @@
 [submodule "persistence/sliver"]
 	path = persistence/sliver
 	url = https://github.com/BishopFox/sliver
+[submodule "persistence/Anubis-8.0"]
+	path = persistence/Anubis-8.0
+	url = https://github.com/CoreLine76/Anubis-8.0
