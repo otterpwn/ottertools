@@ -85,3 +85,6 @@
 [submodule "cryptography/jwt_tool"]
 	path = cryptography/jwt_tool
 	url = https://github.com/ticarpi/jwt_tool
+[submodule "persistence/sliver"]
+	path = persistence/sliver
+	url = https://github.com/BishopFox/sliver
