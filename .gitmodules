@@ -94,3 +94,6 @@
 [submodule "persistence/TheFatRat"]
 	path = persistence/TheFatRat
 	url = https://github.com/screetsec/TheFatRat
+[submodule "network_protocols/entropy"]
+	path = network_protocols/entropy
+	url = https://github.com/evildevill/entropy.git
