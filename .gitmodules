@@ -97,3 +97,6 @@
 [submodule "network_protocols/entropy"]
 	path = network_protocols/entropy
 	url = https://github.com/evildevill/entropy.git
+[submodule "credentials_attacks/CrackMapExec"]
+	path = credentials_attacks/CrackMapExec
+	url = https://github.com/Porchetta-Industries/CrackMapExec.git
