@@ -1,5 +1,6 @@
 ## Frameworks
 https://osintframework.com/
+https://osint.earth/search
 
 ## People Search
 https://www.familytreenow.com/
