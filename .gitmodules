@@ -103,3 +103,9 @@
 [submodule "network_protocols/Coercer"]
 	path = network_protocols/Coercer
 	url = https://github.com/p0dalirius/Coercer
+[submodule "cloud/aad/AADInternals"]
+	path = cloud/aad/AADInternals
+	url = https://github.com/Gerenios/AADInternals.git
+[submodule "cloud/aad/MicroBurst"]
+	path = cloud/aad/MicroBurst
+	url = https://github.com/NetSPI/MicroBurst

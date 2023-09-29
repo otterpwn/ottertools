@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>AzureAD</id>
+    <version>2.0.2.182</version>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft Corporation</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://aka.ms/azps-license</licenseUrl>
+    <projectUrl>https://docs.microsoft.com/en-us/powershell/azuread/v2/azureactivedirectory</projectUrl>
+    <description>Azure Active Directory V2 General Availability Module.
+This is the General Availability release of Azure Active Directory V2 PowerShell Module. 
+For detailed information on how to install and run this module from the PowerShell Gallery including prerequisites, please refer to https://docs.microsoft.com/en-us/powershell/scripting/gallery/overview</description>
+    <releaseNotes></releaseNotes>
+    <copyright>(c) 2017 Microsoft Corporation. All rights reserved.</copyright>
+    <tags>Azure ActiveDirectory AzureAD AD AzureGraph PSModule</tags>
+  </metadata>
+</package>
