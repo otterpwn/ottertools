@@ -109,3 +109,6 @@
 [submodule "cloud/aad/MicroBurst"]
 	path = cloud/aad/MicroBurst
 	url = https://github.com/NetSPI/MicroBurst
+[submodule "cryptography/crypto-tools"]
+	path = cryptography/crypto-tools
+	url = https://github.com/laconicwolf/crypto-tools.git
