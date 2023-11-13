@@ -1,7 +1,9 @@
 # Cryptography Cheatsheet
 ## Setup
 [Install Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)
+
 [Install Mamba](https://ask.sagemath.org/question/51555/ubuntu-1804-apt-install-modulenotfounderror-no-module-named-sage/)
+
 [Install SageMath with Mamba](https://ask.sagemath.org/question/51555/ubuntu-1804-apt-install-modulenotfounderror-no-module-named-sage/)
 
 ---
@@ -77,6 +79,7 @@ while b > 0:
 ### Modular Arithmetic (extreme summary)
 $$a \equiv b \mod{m}$$
 If $m$ divides $a$ then $a \equiv 0 \mod{m}$
+
 Generally $b = a \mod{n}$
 
 ---
