@@ -93,7 +93,9 @@ ans = [x for x in range(p) if(pow(x, 2, p) in ints)]
 
 ### Lengendre Symbol
 The Legendre symbol is denoted as $(\frac{a}{p})$, and it expresses the solvability of the quadratic congruence $x^2 \equiv a \mod{x}$
+
 $$\begin{cases}(\frac{a}{p}) = 1 \text{ if } \exists x \text{ | } x^2 \mod{p} \\ (\frac{a}{p}) = -1 \text{ if } \nexists x \text{ | } x^2 \mod{p} \\ (\frac{a}{p}) = 0 \text{ if } a \equiv 0 \mod{p}\end{cases}$$
+
 ```python
 # (a / p) = 1 if a is a quadratic residue and a ≢ 0 mod p
 # (a / p) = -1 if a is a quadratic non-residue mod p
@@ -160,7 +162,9 @@ root = tonelli(a, p)
 
 ### Chinese Reminder Theorem
 The Chinese Remainder Theorem gives a unique solution to a set of linear congruences if their moduli are coprime. Given $a_i$ and $n_i$ such that
+
 $$\begin{cases}x \equiv a_1 \mod{n_1}\\x \equiv a_2 \mod{n_2}\\\cdots\\x \equiv a_n \mod{n_n}\end{cases}$$
+
 there is a unique solution $x \equiv a \mod{N}$ where $N = n_1 \cdot n_2 \cdot \cdots \cdot n_n$.
 ```python
 from Crypto.Util.number import inverse
