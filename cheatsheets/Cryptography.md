@@ -163,7 +163,7 @@ root = tonelli(a, p)
 ### Chinese Reminder Theorem
 The Chinese Remainder Theorem gives a unique solution to a set of linear congruences if their moduli are coprime. Given $a_i$ and $n_i$ such that
 
-$$\begin{cases}x \equiv a_1 \mod{n_1}\\x \equiv a_2 \mod{n_2}\\\cdots\\x \equiv a_n \mod{n_n}\end{cases}$$
+$$\begin{cases}x \equiv a_1 \mod{n_1}\\ x \equiv a_2 \mod{n_2}\\\cdots\\ x \equiv a_n \mod{n_n}\end{cases}$$
 
 there is a unique solution $x \equiv a \mod{N}$ where $N = n_1 \cdot n_2 \cdot \cdots \cdot n_n$.
 ```python
