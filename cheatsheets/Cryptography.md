@@ -82,7 +82,104 @@ If $m$ divides $a$ then $a \equiv 0 \mod{m}$
 
 Generally $b = a \mod{n}$
 
+### Quadratic Residues
+A quadratic residue is an integer that is congruent to a perfect square modulo a given modulus $p$
+```python
+p = ...
+ints = [..., ..., ..., ...] # list of ints for which we have to check if their squares are in the Z_p field
+
+ans = [x for x in range(p) if(pow(x, 2, p) in ints)]
+```
+
+### Lengendre Symbol
+The Legendre symbol is denoted as $(\frac{a}{p})$, and it expresses the solvability of the quadratic congruence $x^2 \equiv a \mod{x}$
+$$\begin{cases}(\frac{a}{p}) = 1 \text{ if } \exists x \text{ | } x^2 \mod{p} \\ (\frac{a}{p}) = -1 \text{ if } \nexists x \text{ | } x^2 \mod{p} \\ (\frac{a}{p}) = 0 \text{ if } a \equiv 0 \mod{p}\end{cases}$$
+```python
+# (a / p) = 1 if a is a quadratic residue and a ≢ 0 mod p
+# (a / p) = -1 if a is a quadratic non-residue mod p
+# (a / p) = 0 if a ≡ 0 mod p
+p = ...
+ints = [..., ..., ..., ...]
+
+quad = [x for x in ints if(pow(x, (p - 1)//2, p) == 1)]
+
+res = quad[0]
+print(pow(res, (p + 1)//4, p))
+```
+
 ---
+
+### Tonelli-Shanks Algorithm for Modular Square Roots
+The Tonelli-Shanks algorithm calculates $r$ in where $r^2 = a \mod{p}$, the algorithm doesn't work for non-prime moduli.
+```python
+def legendre(a, p):
+    return pow(a, (p - 1) // 2, p)
+
+def tonelli(n, p):
+    assert legendre(n, p) == 1, "not a square (mod p)"
+    q = p - 1
+    s = 0
+
+    while q % 2 == 0:
+        q //= 2
+        s += 1
+    if s == 1:
+        return pow(n, (p + 1) // 4, p)
+    for z in range(2, p):
+        if p - 1 == legendre(z, p):
+            break
+
+    c = pow(z, q, p)
+    r = pow(n, (q + 1) // 2, p)
+    t = pow(n, q, p)
+    m = s
+    t2 = 0
+
+    while (t - 1) % p != 0:
+        t2 = (t * t) % p
+
+        for i in range(1, m):
+            if (t2 - 1) % p == 0:
+                break
+			t2 = (t2 * t2) % p
+
+        b = pow(c, 1 << (m - i - 1), p)
+        r = (r * b) % p
+        c = (b * b) % p
+        t = (t * c) % p
+        m = i
+    return r
+
+a = ...
+p = ...
+
+root = tonelli(a, p)
+```
+
+---
+
+### Chinese Reminder Theorem
+The Chinese Remainder Theorem gives a unique solution to a set of linear congruences if their moduli are coprime. Given $a_i$ and $n_i$ such that
+$$\begin{cases}x \equiv a_1 \mod{n_1}\\x \equiv a_2 \mod{n_2}\\\cdots\\x \equiv a_n \mod{n_n}\end{cases}$$
+there is a unique solution $x \equiv a \mod{N}$ where $N = n_1 \cdot n_2 \cdot \cdots \cdot n_n$.
+```python
+from Crypto.Util.number import inverse
+
+def chineseReminderTheorem(a, m):
+    Mul = 1
+    for i in m:
+        Mul *= i
+    M = [Mul // x for x in m]
+    y = [inverse(M[i], m[i]) for i in range(len(m))]
+    ans = 0
+    for i in range(len(m)):
+        ans += a[i] * M[i] * y[i]
+    return ans % Mul
+
+a = ...
+m = ...
+print(chineseReminderTheorem(a, m))
+```
 
 ## Data / Key Formats
 ### PEM RSA Key
@@ -142,7 +239,14 @@ phi = (p - 1) * (q - 1)
 d = inverse(e, phi)
 pt = long_to_bytes(pow(c, d, n).decode())
 ```
-Or visit [factordb](http://factordb.com).
+To find primes given a modulus you can use [factordb](http://factordb.com) or try to factorize them yourself.
+FactorDB also has a python implementation
+```python
+from factordb.factordb import FactorDB
+
+N = ...
+f = FactorDB(N)
+```
 
 ### Primes Attacks
 - $N$ is a big prime
