@@ -1,4 +1,11 @@
 # Cryptography Cheatsheet
+## Setup
+[Install Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)
+[Install Mamba](https://ask.sagemath.org/question/51555/ubuntu-1804-apt-install-modulenotfounderror-no-module-named-sage/)
+[Install SageMath with Mamba](https://ask.sagemath.org/question/51555/ubuntu-1804-apt-install-modulenotfounderror-no-module-named-sage/)
+
+---
+
 ## Encoding
 - Ascii Encoding
 ```python
@@ -31,8 +38,10 @@ data = 11515195...6269
 message = long_to_bytes(data)
 ```
 
+---
+
 ## Mathematics
-- Greatest Common Divisor (GCD)
+### GCD - Greatest Common Divisor
 ```python
 from Crypto.Util.number import GCD
 
@@ -41,7 +50,7 @@ b = y
 GCD(a, b)
 ```
 
-- Extended Greatest Common Divisor (EGCD)
+### EGCD - Extended Greatest Common Divisor
 ```python
 from Crypto.Util.number import GCD
 
@@ -65,13 +74,15 @@ while b > 0:
 # results are u1 and v1
 ```
 
-- Modular Arithmetic
+### Modular Arithmetic (extreme summary)
 $$a \equiv b \mod{m}$$
 If $m$ divides $a$ then $a \equiv 0 \mod{m}$
 Generally $b = a \mod{n}$
 
+---
+
 ## Data / Key Formats
-- Import PEM RSA Key
+### PEM RSA Key
 ```python
 from Crypto.PublicKey import RSA
 
@@ -84,7 +95,7 @@ e = key.e
 ...
 ```
 
-- Import DER RSA Certificate
+### DER RSA Certificate
 ```python
 from OpenSSL.crypto import load_certificate, FILETYPE_ASN1
 
@@ -97,7 +108,7 @@ n = key.public_numbers().n
 ...
 ```
 
-- Import RSA Keys
+### RSA Keys
 ```python
 from Crypto.PublicKey import RSA
 
@@ -108,6 +119,8 @@ key = RSA.importKey(data)
 n = key.n
 ...
 ```
+
+---
 
 ## RSA
 ```python
@@ -128,7 +141,8 @@ pt = long_to_bytes(pow(c, d, n).decode())
 ```
 Or visit [factordb](http://factordb.com).
 
-- If $N$ is a big prime
+### Primes Attacks
+- $N$ is a big prime
 ```python
 from Crypto.Util.number import inverse, long_to_bytes
 
@@ -142,7 +156,7 @@ pt = pow(ct, d, n)
 print(long_to_bytes(pt).decode())
 ```
 
-- If $N = q \cdot q$ (the same prime is squared)
+- $N = q \cdot q$ (the same prime is squared)
 ```python
 from Crypto.Util.number import inverse, long_to_bytes
 
@@ -156,7 +170,7 @@ pt = pow(ct, d, n)
 print(long_to_bytes(pt).decode())
 ```
 
-- If more than two primes are used
+- More than two primes are used
 ```python
 from Crypto.Util.number import inverse, long_to_bytes
 
@@ -175,7 +189,33 @@ pt = pow(ct, d, n)
 print(long_to_bytes(pt).decode())
 ```
 
-- If `e` is really small
+- **Fermat Factorization**: the difference between $p$ and $q$ is small
+```python
+from Crypto.Util.number import long_to_bytes, inverse
+
+def fermatFactorization(N):
+    a = ceil(sqrt(N))
+    b = a ** 2 - N
+
+    while not b.is_square():
+        a += 1
+        b = a ** 2 - N
+
+    return a - sqrt(b)
+
+n = ...
+e = ...
+c = ...
+
+p = fermatFactorization(n)
+q = n // p
+phi = (p - 1) * (q - 1)
+d = inverse(e, phi)
+pt = pow(c, d, n)
+```
+
+### Public / Private Exponent Attacks
+- $e$ is really small
 ```python
 from Crypto.Util.number import long_to_bytes
 
@@ -187,19 +227,19 @@ if ct < n:
     print(long_to_bytes(ct).decode())
 ```
 
-- If $n \gt\gt ct$
+- $n \gt\gt ct$
 ```python
 from Crypto.Util.number import long_to_bytes
 from gmpy2 import iroot
 
 n = ... # n >> ct
-e = 3
+e = ...
 ct = ...
 
 print(long_to_bytes(iroot(ct, e)[0]).decode())
 ```
 
-- If $e$ has the same bit size of $N$ -> Wiener's attack
+- **Wiener's attack**: $d \lt \frac{1}{3}\sqrt[4]{n}$ given $e$ and $n$
 ```
 curl -O https://raw.githubusercontent.com/orisano/owiener/master/owiener.py
 ```
@@ -214,4 +254,15 @@ c = ...
 d = owiener.attack(e, n)
 pt = pow(c, d, n)
 print(long_to_bytes(pt).decode())
+```
+
+- **Boneh-Durfee attack**: $d \lt N^{0.292}$
+```
+https://raw.githubusercontent.com/mimoo/RSA-and-LLL-attacks/master/boneh_durfee.sage
+```
+Plug the values for $N$, $e$ and $ct$ in the `example` function at the end of the script, to decode the ciphertext you can add the following at the end
+```python
+if d:
+	pt = long_to_bytes(pow(c, d, N)).decode()
+	print(pt)
 ```
