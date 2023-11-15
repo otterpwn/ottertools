@@ -185,6 +185,48 @@ m = ...
 print(chineseReminderTheorem(a, m))
 ```
 
+---
+
+### Gram-Schmidt algorithm
+The Gram-Schmidt algorithm calculates an orthogonal basis $u_1, u_2, \cdots , u_n \in V$ given a basis $v_1, v_2, \cdots , v_n \in V$.
+```python
+import numpy as np
+
+vectors = [np.array([..., ..., ...]),
+		   np.array([..., ..., ...]),
+		   np.array([..., ..., ...]),
+		   np.array([..., ..., ...]),
+		   ...
+		   np.array([..., ..., ...])]
+
+u = [vectors[0]]
+for i in range(1, len(vectors)):
+    mi = [np.dot(vectors[i], u[j]) / np.dot(u[j], u[j]) for j in range(len(u))]
+    u += [vectors[i] - sum([mij * uj for (mij, uj) in zip(mi, u)])]
+
+# result is u
+```
+
+---
+
+### Gaussian Lattice Reduction Algorithm
+The Gaussian Lattice Reduction Algorithm solves the SVP (Shortest Vector Problem) by finding an optimal basis for a two-dimensional lattice given an arbitrary basis.
+```python
+import numpy as np
+v1 = np.array([..., ...])
+v2 = np.array([..., ...])
+m = -1
+
+def gauss(v1, v2):
+    while True:
+        if v2.norm() < v1.norm():
+            v1, v2 = v2, v1
+        m = round(v1 * v2 / (v1 * v1))
+        if m == 0:
+            return v1, v2
+        v2 = v2 - m * v1
+```
+
 ## Data / Key Formats
 ### PEM RSA Key
 ```python
@@ -327,18 +369,6 @@ pt = pow(c, d, n)
 
 ### Public / Private Exponent Attacks
 - $e$ is really small
-```python
-from Crypto.Util.number import long_to_bytes
-
-n = ...
-e = 1 # small value
-ct = ...
-
-if ct < n:
-    print(long_to_bytes(ct).decode())
-```
-
-- $n \gt\gt ct$
 ```python
 from Crypto.Util.number import long_to_bytes
 from gmpy2 import iroot
